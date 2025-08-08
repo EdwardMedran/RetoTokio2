@@ -1,0 +1,14 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: retotokio2
+    version: "@project.version@"
+  banner:
+    location: classpath:banner.txt
+  data:
+    mongodb:
+        uri: mongodb+srv://mongoadmin:9ZmtpZG2cCoZDJ9y@cluster0.3hat8tw.mongodb.net/bdbase2
+  output:
+    ansi:
+        enabled: ALWAYS

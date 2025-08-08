@@ -1,6 +1,7 @@
 package com.example.retotokio2.controller;
 
 import com.example.retotokio2.dto.UserDto;
+import com.example.retotokio2.service.impl.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,14 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final User
+    private final UserService userService;
 
+    @GetMapping("/{id}")
     public Mono<ResponseEntity<UserDto>> getUser(@PathVariable String id){
-
+        return this.userService.getUser(id)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
     }
+
 
 }

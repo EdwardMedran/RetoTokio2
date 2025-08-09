@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/v1/users")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -23,9 +23,8 @@ public class UserController {
     }
 
     @GetMapping
-    public Flux<ResponseEntity<UserDto>> getAllUser() {
-        return this.userService.getAllUser()
-                .map(ResponseEntity::ok)
+    public Mono<ResponseEntity<Flux<UserDto>>> getAllUser() {
+        return Mono.just(ResponseEntity.ok(this.userService.getAllUser()))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 

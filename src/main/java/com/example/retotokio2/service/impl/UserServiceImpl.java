@@ -19,8 +19,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Mono<UserDto> getUser(String id) {
         return this.userRepository.findById(id)
-                //.map(UserMapper::entityToDto)
-                .map(userEntity -> UserMapper.entityToDto(userEntity));
+                .map(UserMapper::entityToDto);
+//                .map(userEntity -> UserMapper.entityToDto(userEntity));
     }
 
     @Override

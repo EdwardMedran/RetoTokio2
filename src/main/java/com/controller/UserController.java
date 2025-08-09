@@ -1,7 +1,7 @@
-package com.example.retotokio2.controller;
+package com.controller;
 
-import com.example.retotokio2.dto.UserDto;
-import com.example.retotokio2.service.UserService;
+import com.dto.UserDto;
+import com.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +33,6 @@ public class UserController {
         return  this.userService.saveUser(dto)
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
-
     }
 }
 

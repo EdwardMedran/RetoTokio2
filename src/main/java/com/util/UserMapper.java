@@ -1,7 +1,7 @@
-package com.example.retotokio2.util;
+package com.util;
 
-import com.example.retotokio2.dto.UserDto;
-import com.example.retotokio2.entity.UserEntity;
+import com.dto.UserDto;
+import com.entity.UserEntity;
 
 public class UserMapper {
     public static UserDto entityToDto(UserEntity user){

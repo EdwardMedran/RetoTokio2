@@ -1,4 +1,4 @@
-package com.example.retotokio2.dto;
+package com.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

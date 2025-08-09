@@ -1,10 +1,9 @@
-package com.example.retotokio2.service.impl;
+package com.service.impl;
 
-import com.example.retotokio2.dto.UserDto;
-import com.example.retotokio2.entity.UserEntity;
-import com.example.retotokio2.repository.UserRepository;
-import com.example.retotokio2.service.UserService;
-import com.example.retotokio2.util.UserMapper;
+import com.dto.UserDto;
+import com.repository.UserRepository;
+import com.service.UserService;
+import com.util.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

@@ -1,4 +1,4 @@
-package com.example.retotokio2.entity;
+package com.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

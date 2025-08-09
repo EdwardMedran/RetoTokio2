@@ -1,6 +1,6 @@
-package com.example.retotokio2.repository;
+package com.repository;
 
-import com.example.retotokio2.entity.UserEntity;
+import com.entity.UserEntity;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 

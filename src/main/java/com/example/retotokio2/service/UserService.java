@@ -1,4 +1,4 @@
-package com.example.retotokio2.service.impl;
+package com.example.retotokio2.service;
 
 import com.example.retotokio2.dto.UserDto;
 import reactor.core.publisher.Flux;

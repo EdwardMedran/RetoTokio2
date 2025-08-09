@@ -1,8 +1,7 @@
 package com.example.retotokio2.controller;
 
 import com.example.retotokio2.dto.UserDto;
-import com.example.retotokio2.service.impl.UserService;
-import lombok.Getter;
+import com.example.retotokio2.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -36,4 +36,21 @@ public class UserServiceImpl implements UserService {
                 .map(UserMapper::entityToDto);
 //              .map(userDto -> UserMapper.entityToDto(userDto));
     }
+
+    @Override
+    public Mono<Void> deleteUser(String id){
+        return this.userRepository.deleteById(id);
+    }
+
+    @Override
+    public Mono<UserDto> updateUser(String id, UserDto user){
+        return this.userRepository.findById(id)
+                .flatMap(entity -> {
+                    entity.setName(user.getNombre());
+                    entity.setAge(user.getEdad());
+                    entity.setEmail(user.getCorreo());
+                    return userRepository.save(entity);
+                })
+                .map(UserMapper::entityToDto);
+    }
 }

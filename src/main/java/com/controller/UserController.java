@@ -34,6 +34,19 @@ public class UserController {
                 .map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
+
+    @DeleteMapping("/{id}")
+    public Mono<ResponseEntity<Void>> deleteUser(@PathVariable String id){
+        return this.userService.deleteUser(id)
+                .then(Mono.just(ResponseEntity.noContent().build()));
+    }
+
+    @PutMapping("/{id}")
+    public Mono<ResponseEntity<UserDto>> updateUser(@PathVariable String id, @RequestBody UserDto dto){
+        return this.userService.updateUser(id, dto)
+                .map(ResponseEntity::ok)
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
 }
 
 
